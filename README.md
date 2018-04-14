@@ -18,3 +18,7 @@ pip install leetpass
 >>> strengthen.strengthen("averylongpassword")
 '&v3rylongpa5sWord'
 ```
+
+## Found In
+
+https://mnemopass.herokuapp.com (https://github.com/patarapolw/mnemopass)
