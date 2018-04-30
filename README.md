@@ -1,24 +1,17 @@
-# Leetpass
+# Diceware Utilities
 
-A leetspeak-based password strengthener, while attempting minimalistic change.
+A collection of tools to make diceware passphrase conform with ["password policy"](https://en.wikipedia.org/wiki/Password_policy)
+
+For a selection of words, please see [other packages inside PyPI](https://pypi.org/search/?q=diceware).
 
 ## Installation
 
-```
-pip install leetpass
-```
-
-## Usage
-
-```
->>> from leetpass.strengthen import Strengthen
->>> strengthen = Strengthen()
->>> strengthen.strengthen("averylongpassword")
-'avErylongpassword'
->>> strengthen.strengthen("averylongpassword")
-'&v3rylongpa5sWord'
+```commandline
+pip install diceware_utils
 ```
 
-## Found In
+or
 
-https://mnemopass.herokuapp.com (https://github.com/patarapolw/mnemopass)
+```commandline
+pipenv
+```
