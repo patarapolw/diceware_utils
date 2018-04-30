@@ -13,5 +13,13 @@ pip install diceware_utils
 or
 
 ```commandline
-pipenv
+pipenv install -e git+https://github.com/patarapolw/diceware_utils.git
+```
+
+## Usage
+
+```pycon
+>>> from diceware_utils.policy import Conformize
+>>> Conformize().conformize(['unlikely', 'piezo', 'electric', 'grounds'])
+'unlikElypiEzo&lt;ElectriC73grOunds'
 ```
