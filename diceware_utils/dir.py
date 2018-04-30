@@ -5,8 +5,8 @@ ROOT = os.path.abspath(os.path.dirname(inspect.getframeinfo(inspect.currentframe
 
 
 def database_path(database):
-    return os.path.join('database', database)
+    return os.path.join(ROOT, 'database', database)
 
 
 def wordlist_path(database):
-    return os.path.join('wordlist', database)
+    return os.path.join(ROOT, 'wordlist', database)

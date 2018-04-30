@@ -9,11 +9,11 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='diceware_utils',  # Required
-    version='0.3.0',  # Required
+    version='0.3.1',  # Required
     description='A collection of tools to make diceware passphrase conform with "password policy"',  # Required
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
-    url='https://github.com/patarapolw/leetpass',  # Optional
+    url='https://github.com/patarapolw/diceware_utils',  # Optional
     author='Pacharapol Withayasakpunt',  # Optional
     author_email='patarapolw@gmail.com',  # Optional
     license='MIT',
