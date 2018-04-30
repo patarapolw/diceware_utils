@@ -28,4 +28,7 @@ pipenv install -e git+https://github.com/patarapolw/diceware_utils.git
 >>> from diceware_utils.policy import Conformize
 >>> Conformize().conformize(['unlikely', 'piezo', 'electric', 'grounds'])
 'unlikElypiEzo&lt;ElectriC73grOunds'
+>>> from diceware_utils.wordlist import Wordlist
+>>> Wordlist().get_random_word()
+'ladybug'
 ```
