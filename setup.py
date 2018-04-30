@@ -10,17 +10,24 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name='diceware_utils',  # Required
     version='0.2.0',  # Required
-    description='A leetspeak-based password strengthener, while attempting minimalistic change.',  # Required
+    description='A collection of tools to make diceware passphrase conform with "password policy"',  # Required
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
     url='https://github.com/patarapolw/leetpass',  # Optional
     author='Pacharapol Withayasakpunt',  # Optional
     author_email='patarapolw@gmail.com',  # Optional
+    license='MIT',
     classifiers=[
+        'Development Status :: 4 - Beta',
+        'Environment :: Console',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        'Operating System :: OS Independent',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Topic :: Security',
+        'Topic :: Security :: Cryptography'
     ],
     keywords='password leet leetspeak diceware',  # Optional
     packages=['diceware_utils'],  # Required
@@ -32,4 +39,5 @@ setup(
     package_data={  # Optional
         'diceware_utils': ['database'],
     },
+    include_package_data=True
 )

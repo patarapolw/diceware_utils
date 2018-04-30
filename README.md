@@ -1,5 +1,11 @@
 # Diceware Utilities
 
+[![Build Status](https://travis-ci.org/patarapolw/diceware_utils.svg?branch=master)](https://travis-ci.org/patarapolw/diceware_utils)
+[![PyPI version shields.io](https://img.shields.io/pypi/v/diceware_utils.svg)](https://pypi.python.org/pypi/diceware_utils/)
+[![PyPI license](https://img.shields.io/pypi/l/diceware_utils.svg)](https://pypi.python.org/pypi/diceware_utils/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/diceware_utils.svg)](https://pypi.python.org/pypi/diceware_utils/)
+[![PyPI status](https://img.shields.io/pypi/status/diceware_utils.svg)](https://pypi.python.org/pypi/diceware_utils/)
+
 A collection of tools to make diceware passphrase conform with ["password policy"](https://en.wikipedia.org/wiki/Password_policy)
 
 For a selection of words, please see [other packages inside PyPI](https://pypi.org/search/?q=diceware).
