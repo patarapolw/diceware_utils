@@ -19,7 +19,7 @@ pip install diceware_utils
 or
 
 ```commandline
-pipenv install -e git+https://github.com/patarapolw/diceware_utils.git
+pipenv install -e git+https://github.com/patarapolw/diceware_utils.git#egg=diceware_utils
 ```
 
 ## Usage
@@ -32,3 +32,7 @@ pipenv install -e git+https://github.com/patarapolw/diceware_utils.git
 >>> Wordlist().get_random_word()
 'ladybug'
 ```
+
+## Found in
+
+- https://github.com/patarapolw/memorable-password
