@@ -24,11 +24,11 @@ class Conformize:
         :param float timeout:
         :return str | None:
         >>> Conformize().conformize(['unlikely', 'piezo', 'electric', 'grounds'])
-        'unlikElypiEzo<ElectriC73grOunds'
+        24Unlikely\PiezO{ElectriCGrouNds
         """
-        word_list = self.modify.switch_case_all(word_list)
+        word_list = self.modify.title_case_all(word_list)
         word_list = self.modify.insert_number_one(word_list)
-        print(word_list)
+        word_list = self.modify.insert_symbol_one(word_list)
 
         start = time()
         while time()-start < timeout:

@@ -70,3 +70,7 @@ class Modify:
             new_word_list.append(word[:char_index] + char_substituted + word[char_index + 1:])
 
         return new_word_list
+
+    @staticmethod
+    def title_case_all(word_list):
+        return [word.title() for word in word_list]
