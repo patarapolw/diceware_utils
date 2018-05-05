@@ -24,7 +24,7 @@ class Conformize:
         :param float timeout:
         :return str | None:
         >>> Conformize().conformize(['unlikely', 'piezo', 'electric', 'grounds'])
-        24Unlikely\PiezO{ElectriCGrouNds
+        ';U$Piezo33lGrounds'
         """
         word_list = self.modify.title_case_all(word_list)
         word_list = self.modify.insert_number_one(word_list)
@@ -32,7 +32,9 @@ class Conformize:
 
         start = time()
         while time()-start < timeout:
-            if not self.policy.is_conform(''.join(word_list)):
+            if not self.policy.length(''.join(word_list)):
+                word_list = self.modify.shorten_one(word_list)
+            elif not self.policy.is_conform(''.join(word_list)):
                 word_list = choice([self.modify.insert_symbol_one(word_list),
                                     self.modify.switch_case_one(word_list),
                                     self.modify.leetify_one(word_list)])
@@ -42,11 +44,29 @@ class Conformize:
         print('Non-conformed password:', ''.join(word_list))
         return None
 
+    def update_policy(self, policy_dict):
+        """
+
+        :param dict | None policy_dict:
+        :return:
+        """
+        self.policy = Policy(policy_dict=policy_dict)
+
+    def get_policy(self):
+        return self.policy.get_policy()
+
 
 class Policy:
-    def __init__(self):
-        with open(database_path('policy.yaml')) as f:
-            self.policy = yaml.safe_load(f)['policy']
+    def __init__(self, policy_dict=None):
+        """
+
+        :param dict | None policy_dict:
+        """
+        if policy_dict is not None:
+            self.policy = policy_dict
+        else:
+            with open(database_path('policy.yaml')) as f:
+                self.policy = yaml.safe_load(f)['policy']
 
     @staticmethod
     def both_upper_and_lower(password):
@@ -89,6 +109,12 @@ class Policy:
         """
         return len([char for char in password if char in string.punctuation])
 
+    def length(self, password):
+        if self.policy['length']['min'] <= len(password) <= self.policy['length']['max']:
+            return True
+        else:
+            return False
+
     def is_conform(self, password):
         if self.policy['both_upper_and_lower']:
             if not self.both_upper_and_lower(password):
@@ -100,4 +126,10 @@ class Policy:
         if self.punctuation_count(password) < self.policy['punctuation_count']:
             return False
 
+        if not self.length(password):
+            return False
+
         return True
+
+    def get_policy(self):
+        return self.policy

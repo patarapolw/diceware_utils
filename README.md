@@ -26,11 +26,26 @@ pipenv install -e git+https://github.com/patarapolw/diceware_utils.git#egg=dicew
 
 ```pycon
 >>> from diceware_utils.policy import Conformize
->>> Conformize().conformize(['unlikely', 'piezo', 'electric', 'grounds'])
-24Unlikely\PiezO{ElectriCGrouNds
+>>> conformize = Conformize()
+>>> conformize.conformize(['unlikely', 'piezo', 'electric', 'grounds'])
+';U$Piezo33lGrounds'
+>>> conformize.update_policy(new_policy)
 >>> from diceware_utils.wordlist import Wordlist
 >>> Wordlist().get_random_word()
 'ladybug'
+```
+
+## Adapting to the policy of your choice 
+
+- Policy is now updateable. It is of format:
+
+```yaml
+both_upper_and_lower: true
+digit_count: 2
+punctuation_count: 2
+length:
+  min: 10
+  max: 20
 ```
 
 ## Found in

@@ -9,7 +9,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='diceware_utils',  # Required
-    version='0.3.5',  # Required
+    version='0.4.0',  # Required
     description='A collection of tools to make diceware passphrase conform with "password policy"',  # Required
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
@@ -39,5 +39,5 @@ setup(
     package_data={  # Optional
         'diceware_utils': ['database/*', 'wordlist/*'],
     },
-    include_package_data=True
+    # include_package_data=True
 )

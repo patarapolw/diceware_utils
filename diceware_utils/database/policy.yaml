@@ -2,3 +2,6 @@ policy:
   both_upper_and_lower: true
   digit_count: 2
   punctuation_count: 2
+  length:
+    min: 10
+    max: 20
