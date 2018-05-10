@@ -8,8 +8,6 @@
 
 A collection of tools to make diceware passphrase conform with ["password policy"](https://en.wikipedia.org/wiki/Password_policy)
 
-For a selection of words, please see [other packages inside PyPI](https://pypi.org/search/?q=diceware).
-
 ## Installation
 
 ```commandline
@@ -47,7 +45,28 @@ length:
   min: 10
   max: 20
 ```
+## Database sources
 
-## Found in
+`leetspeak.yaml`, `policy.yaml` and Conformization algorithm are original. Wordlists are taken from [pwgen-passphrase](https://github.com/xmikos/pwgen-passphrase), which belongs to the respective authors.
 
-- https://github.com/patarapolw/memorable-password
+Main wordlist to generate the password is `eff-long.txt`, which is from Electronic Frontier Foundation.
+
+Another interesting wordlist in this series is `aspell-en.txt` which is maintained by Kevin Atkinson. I exported these two files to the Android app below.
+
+The idea of diceware password is from [https://xkcd.com/936/](https://xkcd.com/936/).
+
+## Web demo
+
+http://diceware-utils.herokuapp.com
+
+<img src="https://i.imgur.com/yy7EoW1.png">
+
+## Mobile application
+
+Please see [Keepass DX - memorable password](https://github.com/patarapolw/KeePassDX-memorable-password) which is an Android password manager with this generator.
+
+I might plan to create a dedicated app for this password generator, because of the relatively slow start-up time of the app.
+
+## Related projects
+
+- [randomsentence](https://github.com/patarapolw/randomsentence) - a random sentence maker based on a list of keywords.

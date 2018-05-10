@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <title>Diceware Passphrase Generator</title>
+</head>
+<body>
+    <div class="container mt-3">
+        <form action="/generate_password" method="post" id="generate_password_form">
+            <div class="form-group row">
+                <input class="form-control mt-3" type="text" name="keywords" id="keywords" placeholder="Put your keywords here, or none if you want randomized keywords">
+                <button type="button" class="btn btn-light form-control mt-3" id="do_randomize_words">Randomize words</button>
+                <button type="submit" class="btn btn-primary form-control mt-3" id="do_generate_password">Generate Password</button>
+            </div>
+        </form>
+
+        <center id="generated_password" class="mt-3 mb-3">
+            Password will appear here.
+        </center>
+
+        <form action="/generate_sentence" method="post" id="generate_sentence_form">
+            <div class="row">
+                Please type the keywords you actually see in the above password here.
+            </div>
+            <div class="form-group row">
+                <input class="form-control mt-3" type="text" name="visible_keywords" id="visible_keywords" placeholder="Visible keywords inside the password">
+                <button type="submit" class="btn btn-primary form-control mt-3" id="do_generate_sentence">Generate Sentence</button>
+            </div>
+        </form>
+
+        <center id="generated_sentence" class="mt-3 mb-3">
+            Sentence will appear here.
+        </center>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
