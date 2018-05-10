@@ -63,9 +63,9 @@ http://diceware-utils.herokuapp.com
 
 ## Mobile application
 
-Please see [Keepass DX - memorable password](https://github.com/patarapolw/KeePassDX-memorable-password) which is an Android password manager with this generator.
+Please see [Keepass DX - memorable password](https://github.com/patarapolw/KeePassDX-memorable-password) -- an Android password manager with this generator.
 
-I might plan to create a dedicated app for this password generator, because of the relatively slow start-up time of the app.
+I might plan to create a dedicated app for this password generator (probably without manager), because of the relatively slow start-up time of the SentenceMaker.
 
 ## Related projects
 
