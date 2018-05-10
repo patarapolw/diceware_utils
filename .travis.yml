@@ -11,4 +11,3 @@ script:
   - "python setup.py test"
 #  - "pytest --doctest-modules"
   - "python -m nltk.downloader all"
-  
