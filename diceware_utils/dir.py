@@ -9,4 +9,4 @@ def database_path(database):
 
 
 def wordlist_path(database):
-    return os.path.join(ROOT, 'wordlist', database)
+    return os.path.join(ROOT, 'database', 'wordlist', database)
