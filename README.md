@@ -31,6 +31,9 @@ pipenv install -e git+https://github.com/patarapolw/diceware_utils.git#egg=dicew
 >>> from diceware_utils.wordlist import Wordlist
 >>> Wordlist().get_random_word()
 'ladybug'
+>>> from diceware_utils.generate import GeneratePassword
+>>> GeneratePassword().generate()
+',Ab17HaRLanky-RoyalS'
 ```
 
 ## Adapting to the policy of your choice 

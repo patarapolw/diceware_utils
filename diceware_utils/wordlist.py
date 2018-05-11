@@ -8,7 +8,9 @@ from diceware_utils.dir import wordlist_path
 
 
 class Wordlist:
-    def __init__(self, word_list='eff-long'):
+    def __init__(self, word_list=None):
+        if word_list is None:
+            word_list = 'eff-long'
         with lzma.open(wordlist_path('{}.txt.xz'.format(word_list))) as f:
             self.wordlist = f.read().decode().strip().split('\n')
 
