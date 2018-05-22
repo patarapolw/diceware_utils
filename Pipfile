@@ -8,6 +8,7 @@ pyyaml = "*"
 bottle = "*"
 randomsentence = "*"
 nltk = "*"
+pytest-doctestplus = "*"
 
 [dev-packages]
 pytest = "*"

@@ -8,6 +8,16 @@
 
 A collection of tools to make diceware passphrase conform with ["password policy"](https://en.wikipedia.org/wiki/Password_policy)
 
+## Update
+
+- (2017.05.22) Allow "weak" password generation.
+
+```pycon
+>>> from diceware_utils.generate import GeneratePassword
+>>> GeneratePassword().generate(weak=True)
+'+"75ImposeRompSudoku'
+```
+
 ## Installation
 
 ```commandline

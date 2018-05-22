@@ -78,7 +78,10 @@ class Modify:
     @staticmethod
     def shorten_one(word_list, max_length=3):
         word_index = randrange(len(word_list))
-        length = 1 + randrange(max_length - 1)
-        new_word = word_list[word_index][:length]
+        if word_list[word_index].isalpha():
+            length = 1 + randrange(max_length - 1)
+            new_word = word_list[word_index][:length]
 
-        return [word if i != word_index else new_word for i, word in enumerate(word_list)]
+            return [word if i != word_index else new_word for i, word in enumerate(word_list)]
+        else:
+            return word_list

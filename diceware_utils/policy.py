@@ -2,9 +2,9 @@ import yaml
 from time import time
 import string
 try:
-    from secrets import choice
+    from secrets import choice, randbelow as randrange
 except ImportError:
-    from random import choice
+    from random import choice, randrange
 
 from diceware_utils.modify import Modify
 from diceware_utils.dir import database_path
@@ -17,18 +17,30 @@ class Conformize:
         self.policy = Policy()
         self.modify = Modify()
 
-    def conformize(self, word_list, timeout=3):
+    def conformize(self, word_list, timeout=3, weak=False):
         """
 
         :param list word_list:
         :param float timeout:
+        :param bool weak:
         :return str | None:
         >>> Conformize().conformize(['unlikely', 'piezo', 'electric', 'grounds'])
         ';U$Piezo33lGrounds'
         """
         word_list = self.modify.title_case_all(word_list)
-        word_list = self.modify.insert_number_one(word_list)
-        word_list = self.modify.insert_symbol_one(word_list)
+        if not weak:
+            word_list = self.modify.insert_number_one(word_list)
+            word_list = self.modify.insert_symbol_one(word_list)
+        else:
+            index_to_insert = randrange(len(word_list))
+            word_list.insert(index_to_insert, ''.join(
+                [choice(string.punctuation) for _ in range(self.policy.policy['punctuation_count'])]))
+            index_to_insert = randrange(len(word_list))
+            word_list.insert(index_to_insert, ''.join(
+                [choice(string.digits) for _ in range(self.policy.policy['digit_count'])]))
+
+        while not self.policy.length(''.join(word_list)):
+            word_list = self.modify.shorten_one(word_list)
 
         start = time()
         while time()-start < timeout:

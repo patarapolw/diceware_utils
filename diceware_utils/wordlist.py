@@ -6,6 +6,8 @@ except ImportError:
 
 from diceware_utils.dir import wordlist_path
 
+__doctest_skip__ = ['Wordlist.get_random_word']
+
 
 class Wordlist:
     def __init__(self, word_list=None):

@@ -9,7 +9,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='diceware_utils',  # Required
-    version='0.5.1',  # Required
+    version='0.6.0',  # Required
     description='A collection of tools to make diceware passphrase conform with "password policy"',  # Required
     long_description=long_description,  # Optional
     long_description_content_type='text/markdown',  # Optional (see note above)
@@ -32,9 +32,9 @@ setup(
     keywords='password leet leetspeak diceware',  # Optional
     packages=['diceware_utils'],  # Required
     install_requires=['PyYAML'],  # Optional
-    tests_require=['pytest'],
+    tests_require=['pytest', 'pytest-doctestplus'],
     extras_require={  # Optional
-        'test': ['pytest'],
+        'test': ['pytest', 'pytest-doctestplus'],
     },
     package_data={  # Optional
         'diceware_utils': ['database/*',
